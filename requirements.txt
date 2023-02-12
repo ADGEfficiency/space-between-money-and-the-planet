@@ -1,0 +1,4 @@
+sqlalchemy
+nemdata==0.3.4
+pandas
+tabulate
