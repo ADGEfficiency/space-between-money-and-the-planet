@@ -2,6 +2,8 @@
 
 Supporting materials for the blog post [Space Between Money and the Planet](https://adgefficiency.com/space-between-money-and-the-planet/).
 
+![Annual price, carbon and carbon price deltas for 2014 to 2022](./static/annual.png).
+<p align="center"><em>Annual price, carbon and carbon price deltas for 2014 to 2022</em>.</p>
 
 ## Reproduce Experiment
 
