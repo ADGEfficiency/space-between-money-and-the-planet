@@ -1,4 +1,5 @@
 sqlalchemy
 nemdata==0.3.4
+energypylinear==0.1.0
 pandas
 tabulate

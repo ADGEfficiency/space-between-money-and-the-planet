@@ -122,16 +122,17 @@ def plot_monthly(output):
     output.plot(ax=axes[0], y="variance-emissions", kind="bar", x="year", color="red")
     axes[0].set_ylabel("$k/month")
     axes[1].set_title("Carbon Delta tC/month")
-    axes[0].set_ylabel("tC/month")
+    axes[1].set_ylabel("tC/month")
     output.plot(ax=axes[1], y="variance-profit", kind="bar", x="year")
     axes[2].set_title("Carbon Price $/tC")
-    axes[0].set_ylabel("$/tC")
+    axes[2].set_ylabel("$/tC")
     output.plot(ax=axes[2], y="carbon-price", kind="bar", x="year", color="#467821")
     plt.tight_layout()
 
     for ax in axes.flatten():
         ax.tick_params(axis="y", labelsize=12)
         ax.tick_params(axis="x", labelsize=10)
+        ax.get_legend().remove()
 
     n = 12
     for ax in [axes[2]]:
@@ -169,6 +170,10 @@ def plot_annual(annual):
         axes[2].text(i - 0.08, v - 20, f"{v:.1f}", fontweight="bold", color="white")
 
     axes[2].set_xlabel("")
+
+    axes[0].set_ylabel("$k/year")
+    axes[1].set_ylabel("tC/year")
+    axes[2].set_ylabel("$/tC")
     plt.tight_layout()
 
     for ax in axes:
