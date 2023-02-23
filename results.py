@@ -155,7 +155,19 @@ def plot_annual(annual):
 
     axes[0].set_title("Price Delta $k/year")
     for i, v in enumerate(annual["variance-profit"]):
-        axes[0].text(i - 0.07, v - 100, f"{v:.0f}", fontweight="bold", color="white")
+        vs = f"{v:.0f}"
+
+        if len(vs) == 4:
+            adj = 0.12
+        else:
+            adj = 0.1
+        axes[0].text(
+            i - adj,
+            v - 100,
+            vs,
+            fontweight="bold",
+            color="white"
+        )
     annual.plot(ax=axes[0], y="variance-profit", kind="bar", color="red")
 
     axes[1].set_title("Carbon Delta tC/year")
@@ -167,7 +179,19 @@ def plot_annual(annual):
     axes[2].set_title("Carbon Price $/tC")
     annual.plot(ax=axes[2], y="carbon-price", kind="bar", color="#467821")
     for i, v in enumerate(annual["carbon-price"]):
-        axes[2].text(i - 0.08, v - 20, f"{v:.1f}", fontweight="bold", color="white")
+        vs = f"{v:.1f}"
+        if len(vs) == 5:
+            adj = 0.12
+        else:
+            adj = 0.1
+
+        axes[2].text(
+            i - adj,
+            v - 20,
+            vs,
+            fontweight="bold",
+            color="white"
+        )
 
     axes[2].set_xlabel("")
 
@@ -186,6 +210,7 @@ def plot_annual(annual):
     f.savefig(
         "/Users/adam/adgefficiency.github.io/assets/space-between-2023/annual.png"
     )
+    f.savefig("./static/annual.png")
 
 
 if __name__ == "__main__":
